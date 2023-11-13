@@ -4,6 +4,9 @@ const InventoryPage = {
     getInventoryList: () => cy.get('.inventory_list'),
     getCartButton: () => cy.get('a.shopping_cart_link'),
     getLogoutButton: () => cy.get('#logout_sidebar_link'),
+    getTwitterLinkButton: () => cy.get('a[href*="twitter"]'),
+    getFacebookLinkButton: () => cy.get('a[href*="facebook"]'),
+    getLinkedInLinkButton: () => cy.get('a[href*="linkedin"]'),
     clickLogoutButton: () => cy.get('#logout_sidebar_link').click(),
     clickMenuButton: () => cy.get('#react-burger-menu-btn').click(),
 
@@ -19,9 +22,6 @@ const InventoryPage = {
     // itemLink = cy.get('#inventory_container .inventory_item:first-of-type a')
     // itemDetail = cy.get('.inventory_details_container')
     // shoppingCartBadge = cy.get('.shopping_cart_badge')
-    // twitterLinkButton = cy.get('a[href*="twitter"]')
-    // facebookLinkButton = cy.get('a[href*="facebook"]')
-    // linkedinLinkButton = cy.get('a[href*="linkedin"]')
 }
 
 module.exports = {InventoryPage};
