@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "open": "cypress open"
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open",
+    "report:open": "start cypress/reports/index.html",
+    "report:generate": "npm run test && npm run report:open"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +18,15 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^19.1.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/index.html"
+    },
+    "messages": {
+      "enabled": false,
+      "output": "cypress/reports/messages.ndjson"
+    }
   }
 }

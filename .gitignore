@@ -1,4 +1,5 @@
-/cypress/screenshots/
 /node_modules/
 /.idea/
+/cypress/screenshots/
 /cypress/downloads/
+/cypress/reports/
