@@ -1,14 +1,14 @@
-import Page from './page.js';
+const CartPage = {
 
-class CartPage extends Page {
+    visit: () => cy.visit('/inventory.html'),
+    getCartList: () => cy.get('.cart_list'),
+    getCartItems: () => cy.get('.cart_item'),
+    getItemLabel: () => cy.get('.inventory_item_name:last-of-type'),
+    getCheckoutButton: () => cy.get('#checkout'),
 
-    itemLabel = cy.get('.inventory_item_name:last-of-type')
-    checkoutButton = cy.get('#checkout')
-    errorMessage = cy.get('#error')
-
-    open() {
-        return super.open('cart.html');
-    }
+    verify: () => {
+        CartPage.getCartList().should('be.visible')
+    },
 }
 
-export default new CartPage();
+module.exports = { CartPage };
