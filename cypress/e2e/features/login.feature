@@ -47,8 +47,8 @@ Feature: Login
     And Username and password fields must be highlighted with red color
 
   Scenario: Logout
-    Given I am logined into account
-    When I click on the "menu" button on the inventory page
+    Given I am logged in to my account
+    When I click on the menu button on the inventory page
     Then I should see the logout button in the menu
     When I click on the logout button in the menu
     Then I should be on the "login" page

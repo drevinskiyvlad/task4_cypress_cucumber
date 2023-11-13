@@ -1,11 +1,12 @@
-import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import {When, Then} from "@badeball/cypress-cucumber-preprocessor";
 import {CartPage} from "../../e2e/pageobjects/cart.page";
 import {ProductPage} from "../../e2e/pageobjects/product.page";
+
 const {InventoryPage} = require('../../e2e/pageobjects/inventory.page');
+
 When(/^I click add to cart button near the first item$/, function () {
     InventoryPage.getAddToCartButton().first().click();
 });
-
 Then(/^Cart item number must be increased by 1$/, function () {
     InventoryPage.getShoppingCartBadge().should('contain.text', '1');
 });

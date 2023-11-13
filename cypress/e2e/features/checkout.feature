@@ -1,7 +1,7 @@
 Feature: Checkout
 
   Background:
-    Given I am logined into account
+    Given I am logged in to my account
     When I click add to cart button near the first item
     Then Cart item number must be increased by 1
     When I click on the cart button at the top right corner

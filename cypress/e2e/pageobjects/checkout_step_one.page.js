@@ -1,6 +1,5 @@
 const CheckoutStepOnePage = {
 
-    visit: () => cy.visit('/checkout-step-one.html'),
     getCheckoutForm: () => cy.get('#checkout_info_container'),
     getFirstNameInput: () => cy.get('#first-name'),
     getLastNameInput: () => cy.get('#last-name'),
@@ -8,19 +7,15 @@ const CheckoutStepOnePage = {
     getErrorMessage: () => cy.get('.error h3'),
     clickSubmitButton: () => cy.get('#continue').click(),
 
-    enterFirstName: (firstName) => {
-        CheckoutStepOnePage.getFirstNameInput().type(firstName);
-    },
-    enterLastName: (lastName) => {
-        CheckoutStepOnePage.getLastNameInput().type(lastName);
-    },
-    enterPostalCode: (postalCode) => {
-        CheckoutStepOnePage.getPostalCodeInput().type(postalCode);
-    },
+    enterFirstName: (firstName) =>
+        CheckoutStepOnePage.getFirstNameInput().type(firstName),
+    enterLastName: (lastName) =>
+        CheckoutStepOnePage.getLastNameInput().type(lastName),
+    enterPostalCode: (postalCode) =>
+        CheckoutStepOnePage.getPostalCodeInput().type(postalCode),
 
-    verify: ()=> {
-        CheckoutStepOnePage.getCheckoutForm().should('be.visible')
-    }
+    visit: () => cy.visit('/checkout-step-one.html'),
+    verify: () => CheckoutStepOnePage.getCheckoutForm().should('be.visible')
 }
 
-module.exports = { CheckoutStepOnePage };
+module.exports = {CheckoutStepOnePage};

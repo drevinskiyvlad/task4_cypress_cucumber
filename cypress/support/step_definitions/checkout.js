@@ -1,4 +1,4 @@
-import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import {When, Then} from "@badeball/cypress-cucumber-preprocessor";
 import {CartPage} from "../../e2e/pageobjects/cart.page";
 import {CheckoutStepOnePage} from "../../e2e/pageobjects/checkout_step_one.page";
 import {CheckoutStepTwoPage} from "../../e2e/pageobjects/checkout_step_two.page";
