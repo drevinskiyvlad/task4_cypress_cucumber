@@ -6,6 +6,8 @@
   "scripts": {
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
+    "cypress:open:mobile": "cypress open --e2e --browser chrome --config-file cypress/configs/cypress.mobile.config.js",
+    "cypress:open:tablet": "cypress open --e2e --browser chrome --config-file cypress/configs/cypress.tablet.config.js",
     "report:open": "start cypress/reports/index.html",
     "report:generate": "npm run test && npm run report:open"
   },
