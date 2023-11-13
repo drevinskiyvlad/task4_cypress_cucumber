@@ -1,31 +1,28 @@
-import Page from './page.js';
+const InventoryPage = {
 
-class InventoryPage extends Page {
+    visit: () => cy.visit('/inventory.html'),
+    getInventoryList: () => cy.get('.inventory_list'),
+    getCartButton: () => cy.get('a.shopping_cart_link'),
+    getLogoutButton: () => cy.get('#logout_sidebar_link'),
+    clickLogoutButton: () => cy.get('#logout_sidebar_link').click(),
+    clickMenuButton: () => cy.get('#react-burger-menu-btn').click(),
 
-    inventoryList = cy.get('.inventory_list')
-    menuButton = cy.get('#react-burger-menu-btn')
-    logoutButton = cy.get('#logout_sidebar_link')
-    addToCartButton = cy.get('button[class*="btn_inventory"][id*="add-to-cart"]')
-    removeFromCartButton = cy.get('button[class*="btn_inventory"][id*="remove"]')
-    cartButton = cy.get('a.shopping_cart_link')
-    itemLabel = cy.get('#inventory_container .inventory_item:first-of-type .inventory_item_name')
-    itemLink = cy.get('#inventory_container .inventory_item:first-of-type a')
-    itemDetail = cy.get('.inventory_details_container')
-    shoppingCartBadge = cy.get('.shopping_cart_badge')
-    twitterLinkButton = cy.get('a[href*="twitter"]')
-    facebookLinkButton = cy.get('a[href*="facebook"]')
-    linkedinLinkButton = cy.get('a[href*="linkedin"]')
+    verify: () =>{
+        InventoryPage.getInventoryList().should('be.visible')
+        InventoryPage.getCartButton().should('be.visible')
+    },
 
-    // async initCartItemQuantity() {
-    //     if (await this.shoppingCartBadge.isExisting())
-    //         return parseInt(await this.shoppingCartBadge.getText())
-    //     else
-    //         return 0
-    // }
-
-    open() {
-        return super.open('inventory.html');
-    }
+    // inventoryList = cy.get('.inventory_list')
+    // addToCartButton = cy.get('button[class*="btn_inventory"][id*="add-to-cart"]')
+    // removeFromCartButton = cy.get('button[class*="btn_inventory"][id*="remove"]')
+    // itemLabel = cy.get('#inventory_container .inventory_item:first-of-type .inventory_item_name')
+    // itemLink = cy.get('#inventory_container .inventory_item:first-of-type a')
+    // itemDetail = cy.get('.inventory_details_container')
+    // shoppingCartBadge = cy.get('.shopping_cart_badge')
+    // twitterLinkButton = cy.get('a[href*="twitter"]')
+    // facebookLinkButton = cy.get('a[href*="facebook"]')
+    // linkedinLinkButton = cy.get('a[href*="linkedin"]')
 }
 
-export default new InventoryPage();
+module.exports = {InventoryPage};
+
