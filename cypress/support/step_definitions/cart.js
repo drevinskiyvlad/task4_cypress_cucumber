@@ -12,7 +12,7 @@ Then(/^Cart item number must be increased by 1$/, function () {
 When(/^I click "([^"]*)" button near the first item$/, function () {
     InventoryPage.getRemoveFromCartButton().first().click();
 });
-Then(/^Cart item number must be decreased by (\d+)$/, function () {
+Then(/^Cart item number must be decreased by 1$/, function () {
     InventoryPage.getShoppingCartBadge().should('not.exist');
 });
 When(/^I click on the cart button at the top right corner$/, function () {

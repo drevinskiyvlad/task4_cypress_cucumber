@@ -1,13 +1,12 @@
-import Page from './page.js';
+const CheckoutStepTwoPage = {
 
-class CheckoutStepTwoPage extends Page {
+    visit: () => cy.visit('/checkout-step-two.html'),
+    getItemLabel: () => cy.get('.inventory_item_name'),
+    clickSubmitButton: () => cy.get('#finish').click(),
 
-    itemLabel = cy.get('.inventory_item_name')
-    submitButton = cy.get('#finish')
-
-    open() {
-        return super.open('checkout-step-two.html');
-    }
+    verify: () => {
+        CheckoutStepTwoPage.getItemLabel().should('be.visible')
+    },
 }
 
-export default new CheckoutStepTwoPage();
+module.exports = { CheckoutStepTwoPage };

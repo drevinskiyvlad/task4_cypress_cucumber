@@ -4,12 +4,19 @@ const {LoginPage} = require('../../e2e/pageobjects/login.page');
 const {InventoryPage} = require('../../e2e/pageobjects/inventory.page');
 const {CartPage} = require('../../e2e/pageobjects/cart.page');
 const {ProductPage} = require('../../e2e/pageobjects/product.page');
+const {CheckoutStepOnePage} = require('../../e2e/pageobjects/checkout_step_one.page');
+const {CheckoutStepTwoPage} = require('../../e2e/pageobjects/checkout_step_two.page');
+const {CheckoutCompletePage} = require('../../e2e/pageobjects/checkout_complete.page');
+
 
 const pages = {
     login: LoginPage,
     inventory: InventoryPage,
     cart: CartPage,
-    product: ProductPage
+    product: ProductPage,
+    checkout_step_one: CheckoutStepOnePage,
+    checkout_step_two: CheckoutStepTwoPage,
+    checkout_complete: CheckoutCompletePage
 }
 
 Given(/^I am on the "([^"]*)" page$/, function (page) {
