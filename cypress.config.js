@@ -7,5 +7,6 @@ module.exports = defineConfig({
       on('file:preprocessor', cucumber())
     },
     specPattern: "cypress/e2e/features/*.feature",
+    baseUrl: "https://www.saucedemo.com/",
   },
 });
